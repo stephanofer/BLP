@@ -43,7 +43,7 @@ class FileUtils {
 			Set<String> oldKeys = old.getKeys(true);
 			Set<String> updKeys = updated.getKeys(true);
 			for(String str : oldKeys)
-				if(!updKeys.contains(str)) {
+				if(!updKeys.contains(str) && !str.startsWith("Formatted_Level.Tiers.")) {
 					old.set(str, null);
 					changes++;
 				}
