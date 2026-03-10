@@ -14,5 +14,11 @@ Updater:
   Permission:
     Notify: "blp.updates"
     Check: "blp.checkupdates"
+Formatted_Level:
+  Default: "&8[%blp_level%] "
+  Tiers:
+    10: "&a[%blp_level%] "
+    50: "&e[%blp_level%] "
+    100: "&c&l[%blp_level%] "
 Reload:
   Permission: "blp.reload"

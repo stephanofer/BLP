@@ -64,6 +64,12 @@ class PAPI extends PlaceholderExpansion {
 				return String.valueOf(BattleLevelsAPI.getKills(player.getUniqueId()));
 			case "level":
 				return String.valueOf(BattleLevelsAPI.getLevel(player.getUniqueId()));
+			case "level_formatted":
+				int currentLevel = BattleLevelsAPI.getLevel(player.getUniqueId());
+				java.util.Map.Entry<Integer, String> entry = es.xdec0de.blp.utils.files.BLPCfg.formattedLevels.floorEntry(currentLevel);
+				String format = (entry != null) ? entry.getValue() : es.xdec0de.blp.utils.files.BLPCfg.defaultFormattedLevel;
+				if (format == null) format = String.valueOf(currentLevel);
+				return format.replace("%blp_level%", String.valueOf(currentLevel)).replace("%level%", String.valueOf(currentLevel));
 			case "score":
 				return String.valueOf(BattleLevelsAPI.getScore(player.getUniqueId()));
 			case "topstreak":
